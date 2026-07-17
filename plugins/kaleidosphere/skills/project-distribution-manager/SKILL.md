@@ -7,6 +7,15 @@ description: 管理本地项目工作空间、开发现场、项目身份、路�
 
 此能力是 KaleidoSphere 的内部能力，也可以被直接调用。它通过 `ks` CLI 管理项目资产，不直接读写 `$KS_HOME`。
 
+## 体系定位
+
+KaleidoSphere 是面向 Human-in-the-loop 的 AI 工作操作层。它的目标是为多 Agent、
+多项目和本地能力提供可持续的工作现场、上下文恢复与能力路由。
+
+`project-distribution-manager` 是 KS 当前第一项已实现能力，用于管理本地项目资产；
+它不是 KS 的完整定义，也不代表其他规划中能力已经可用。介绍 KS 时，先说明这一
+目标，再明确当前可用能力仅包括项目资产管理。
+
 ## KS CLI 前置条件
 
 执行任何项目资产操作前，先运行 `ks --version`。若命令不可用或版本不符合当前

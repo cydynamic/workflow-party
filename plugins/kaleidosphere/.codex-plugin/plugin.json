@@ -1,21 +1,21 @@
 {
   "name": "kaleidosphere",
   "version": "0.1.0",
-  "description": "Manage durable local AI project assets with the KaleidoSphere ks CLI.",
+  "description": "A human-in-the-loop AI work operating layer, starting with local project assets.",
   "author": {
     "name": "cydynamic"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "KaleidoSphere",
-    "shortDescription": "Manage local project assets with KS.",
-    "longDescription": "Use the KaleidoSphere ks CLI to initialize, register, and locate managed local projects.",
+    "shortDescription": "A durable AI work layer, starting with local project assets.",
+    "longDescription": "KaleidoSphere aims to provide durable worksites, context recovery, and capability routing across Agents and projects. This release implements its first capability: local project asset management.",
     "developerName": "cydynamic",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",
       "Write"
     ],
-    "defaultPrompt": "Use KaleidoSphere to manage my local project assets."
+    "defaultPrompt": "Orient me in KaleidoSphere. Explain its goal, state the currently available capabilities, and use them only when relevant."
   }
 }
