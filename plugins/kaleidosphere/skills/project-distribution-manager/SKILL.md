@@ -42,10 +42,14 @@ ks workspace add --id <id> --path <path>
 ks workspace list
 ks project create --workspace <id> --name <kebab-case-name> [--git-name <name> --git-email <email>]
 ks project register --workspace <id> --name <kebab-case-name> --path <path> --layout direct
+ks project update --id <project-id> [--name <kebab-case-name>] [--workspace <id>] [--path <existing-git-repository>]
 ks project list
 ```
 
 `project register` 只接管用户明确指定的、位于受管工作空间中的既有 Git 仓库；
 它不移动文件、不写入项目本体，也不支持把 `unmanaged/` 中的内容直接标为受管项目。
+
+`project update` 仅修正已有登记，不移动项目文件；必须用 `--id` 指定登记项。指定的新路径
+必须是目标工作空间内已存在的 Git 仓库，避免登记与实际项目脱节。
 
 后续接口会覆盖项目导入、复制、移动、火花关联和知识关联。
