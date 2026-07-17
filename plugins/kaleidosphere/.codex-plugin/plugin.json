@@ -1,0 +1,21 @@
+{
+  "name": "kaleidosphere",
+  "version": "0.1.0",
+  "description": "Manage durable local AI project assets with the KaleidoSphere ks CLI.",
+  "author": {
+    "name": "cydynamic"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "KaleidoSphere",
+    "shortDescription": "Manage local project assets with KS.",
+    "longDescription": "Use the KaleidoSphere ks CLI to initialize, register, and locate managed local projects.",
+    "developerName": "cydynamic",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": "Use KaleidoSphere to manage my local project assets."
+  }
+}
