@@ -40,7 +40,7 @@ description: 管理 KaleidoSphere 受管项目的可选版本规则、版本一�
 
 - 项目和 CLI/plugin 等构件共用同一版本；
 - 各构件独立维护版本；
-- 只管理现有构件文件（例如 `repo/package.json`）中的版本字段。
+- 只管理现有构件文件（例如 `<project-name>/package.json`）中的版本字段。
 
 启用或更新规则时，CLI 应以原子标记块向项目**已有**的 `AGENTS.md`、`CLAUDE.md`、
 `GEMINI.md` 注入版本规则入口。不存在的规则文件不应被擅自创建。规则入口缺失、

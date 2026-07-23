@@ -1,0 +1,22 @@
+{
+  "name": "workflow-party",
+  "plugins": [
+    {
+      "name": "kaleidosphere",
+      "version": "0.1.4",
+      "description": "A human-in-the-loop AI work operating layer with capability routing and local project assets.",
+      "author": {
+        "name": "cydynamic"
+      },
+      "source": "./plugins/kaleidosphere",
+      "category": "developer-tools"
+    }
+  ],
+  "owner": {
+    "name": "cydynamic"
+  },
+  "metadata": {
+    "description": "Personal agent workflow marketplace maintained by cydynamic.",
+    "version": "0.1.4"
+  }
+}

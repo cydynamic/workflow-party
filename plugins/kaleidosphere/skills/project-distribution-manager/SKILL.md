@@ -5,7 +5,7 @@ description: 管理本地项目工作空间、开发现场、项目身份、路�
 
 # Project Distribution Manager
 
-此能力是 KaleidoSphere 的内部能力，也可以被直接调用。它通过 `ks` CLI 管理项目资产，不直接读写 `$KS_HOME`。本 release 中 `ks` CLI 当前安装目录仍可作为命令入口；项目在开发现场内时，源码位置为 `repo/`，局部上下文位于外层 `ks-context/`。
+此能力是 KaleidoSphere 的内部能力，也可以被直接调用。它通过 `ks` CLI 管理项目资产，不直接读写 `$KS_HOME`。本 release 中 `ks` CLI 当前安装目录仍可作为命令入口；项目在开发现场内时，项目本体位于与项目同名的内层目录，局部上下文位于外层 `ks-context/`。
 
 ## 体系定位
 
@@ -32,21 +32,21 @@ plugin 内随附的 npm tarball 安装后再次检查。安装或复检失败时
 - 仅下载、研究、打包或临时查看的材料应由用户决定是否放入 `unmanaged`，不得自行登记为项目。
 - 项目本体必须是 Git 仓库。ZIP 或非 Git 材料只有在用户明确要求转换为受管项目后，才能通过 clone 或初始化 Git 进入受管空间。
 - 项目移动、重新归类和 adoption 必须由用户显式提出，不能根据路径或内容自行执行。
-- `repo/` 是项目本体；`ks-context/` 是项目本体之外的局部上下文。不得向 `repo/` 写入 KS 专用文件。
+- `<project-name>/` 是项目本体；`ks-context/` 是项目本体之外的局部上下文。不得向项目本体写入 KS 专用文件。
 - 本地项目创建可不提供 Git 身份；CLI 在 `ks-context/project.json` 中记录 `gitIdentity: null`，并使用固定的本地专用提交作者完成内外 Git 初始化，不读取全局 Git 配置。
 - 只有配置远程、推送或需要远程身份校验时，才询问用户 Git 姓名和邮箱；两项必须同时显式传入，CLI 才将非敏感身份元数据写入 `ks-context/project.json` 并用于后续本地提交。
 
 ## 开发现场
 
-受管项目的标准开发现场如下。`repo/` 保留项目本体的 Git 历史与远程；外层 Git
+受管项目的标准开发现场如下。内层同名项目目录保留项目本体的 Git 历史与远程；外层 Git
 只管理本地的 `ks-context/`、外层说明和忽略规则。
 
 ```text
-<workspace>/<project-slug>/
-├── repo/                    # 项目本体，必须是 Git 仓库
+<workspace>/<project-name>-proj/
+├── <project-name>/           # 项目本体，必须是 Git 仓库
 ├── ks-context/              # 项目背景、对接、隐性知识、连接引用、交接等
 ├── README.md                # 可选
-├── .gitignore               # 忽略 repo/
+├── .gitignore               # 忽略 <project-name>/
 └── .git/                    # 开发现场的本地管理 Git
 ```
 
@@ -79,11 +79,11 @@ ks project list
 ## 迁入开发现场
 
 1. 先运行 `ks project resolve --path <用户给出的路径> --json` 或 `ks project inspect --id <id> --json`，确认登记身份、工作空间和当前布局；随后运行 `ks project check --id <id> --json`。只有 `compliant: true` 时，才可把它当作符合标准的开发现场。
-2. 只有用户明确要求迁入时，运行不带 `--apply` 的 `ks project migrate --id <id> --to-layout worksite [--extract-context] --json`，展示计划中的源路径、`repo/` 目标、原 Git HEAD/分支/remote 和 `planId`。
-3. 若计划要求 `--extract-context`，明确说明现有 `ks-context/` 将从项目本体 Git 抽离到外层；不得把它留在 `repo/` 和外层各复制一份。
+2. 只有用户明确要求迁入时，运行不带 `--apply` 的 `ks project migrate --id <id> --to-layout worksite [--extract-context] --json`，展示计划中的源路径、`<project-name>-proj/<project-name>/` 目标、原 Git HEAD/分支/remote 和 `planId`。
+3. 若计划要求 `--extract-context`，明确说明现有 `ks-context/` 将从项目本体 Git 抽离到外层；不得把它留在项目本体和外层各复制一份。
 4. 若内层 Git 有未提交改动，默认停止并展示文件列表。只有用户明确确认“保留这些改动并迁入”时，才在预检和执行中加入 `--preserve-worktree`；不得擅自提交、stash、丢弃或清理。
 5. 等用户确认该计划后，才运行 `ks project migrate --id <id> --to-layout worksite [--extract-context] [--preserve-worktree] --apply --plan <planId> --json`。
-6. 完成后用 `inspect`、`resolve --path <project>/repo`、内层 `git status --short --branch` 和外层 `git ls-files` 验收。若抽离了原本被内层 Git 追踪的上下文，向用户明确报告内层出现的删除变更，等待正常源码提交流程处理；不得擅自丢弃、stash 或提交。
+6. 完成后用 `inspect`、`resolve --path <project>-proj/<project>`、内层 `git status --short --branch` 和外层 `git ls-files` 验收。若抽离了原本被内层 Git 追踪的上下文，向用户明确报告内层出现的删除变更，等待正常源码提交流程处理；不得擅自丢弃、stash 或提交。
 
 迁移预检默认会拒绝 `ks-context/` 之外的未提交改动，防止 CLI 隐式搬运用户正在编辑的源码；
 `--preserve-worktree` 仅用于用户已审阅计划并明确要求保留改动的迁入。
