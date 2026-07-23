@@ -10,7 +10,8 @@ Codex plugin 内的 tarball 路径为：
 <plugin-root>/resources/kaleidosphere-<version>.tgz
 ```
 
-当 `ks --version` 不可用时，在确认 tarball 路径后执行：
+当 `ks --version` 不可用，或其版本与当前 plugin tarball 不一致时，先交由
+`runtime-helper` 处理；在确认 tarball 路径后执行：
 
 ```bash
 npm install --global <plugin-root>/resources/kaleidosphere-<version>.tgz

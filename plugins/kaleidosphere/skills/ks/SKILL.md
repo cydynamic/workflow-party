@@ -86,9 +86,13 @@ ks project resolve --path <candidate> --json
 
 ## Runtime bootstrap 与 KS 自维护
 
-Runtime bootstrap 仅属于已经命中的专项：当专项下一步确实需要 KS CLI 时，由该专项按自己的 runtime contract 完成命令可用性检查、随包 runtime 获取和复检；失败即停止该专项 CLI 动作，不得直接操作受控状态或文件。
+Runtime bootstrap 仅属于已经命中的专项：当专项下一步确实需要 KS CLI 时，必须先转交
+`runtime-helper` 完成当前 plugin 随附 tarball 与全局 CLI 的版本比对、必要安装和复检；
+随后专项才可执行任何 CLI 读取或写入。失败即停止该专项 CLI 动作，不得直接操作受控状态或文件。
 
-本入口不提前检查或安装 runtime，也不负责复检。KS 的安装、更新、卸载、doctor、plugin repair 或其他 self-management 当前没有 `runtime-helper`，必须明确说明此 release 尚未提供该能力；不得把专项 runtime bootstrap 说成 KS 自维护已经完成。
+本入口不提前检查或安装 runtime，也不负责复检。`runtime-helper` 只补足已命中专项的
+运行条件；KS 的安装、卸载、doctor、plugin repair 或其他 self-management 仍未实现，
+不得把专项 runtime bootstrap 说成 KS 自维护已经完成。
 
 详见 [KS CLI 边界说明](references/ks-cli-runtime-contract.md)。
 

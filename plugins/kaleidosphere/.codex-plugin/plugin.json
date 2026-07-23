@@ -1,6 +1,6 @@
 {
   "name": "kaleidosphere",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A human-in-the-loop AI work operating layer with capability routing and local project assets.",
   "author": {
     "name": "cydynamic"
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "KaleidoSphere",
     "shortDescription": "A durable AI work layer with capability routing.",
-    "longDescription": "KaleidoSphere aims to provide durable worksites, context recovery, and capability routing across Agents and projects. This release provides the KS routing entry plus local project asset, optional version, and project-rule management.",
+    "longDescription": "KaleidoSphere aims to provide durable worksites, context recovery, and capability routing across Agents and projects. This release provides the KS routing entry, runtime repair, and local project asset, optional version, and project-rule management.",
     "developerName": "cydynamic",
     "category": "Developer Tools",
     "capabilities": [
