@@ -61,6 +61,6 @@ description: 管理 KaleidoSphere 受管项目的可选版本规则、版本一�
 ## 边界
 
 - `project-distribution-manager` 只负责项目身份、工作空间和开发现场；它不承担版本模型。
-- 本 skill 不假设所有项目都有 `package.json`，也不猜测���个 manifest 是版本真值。
+- 本 skill 不假设所有项目都有 `package.json`，也不猜测哪个 manifest 是版本真值。
 - 版本管理不替代发布流程；它只维护和验证用户已声明的版本规则。
 - 非受管项目、未确认 adoption 的项目和 `unmanaged` 目录不得被本 skill 自动配置。
