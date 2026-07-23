@@ -1,6 +1,6 @@
 {
   "name": "kaleidosphere",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A human-in-the-loop AI work operating layer with capability routing and local project assets.",
   "author": {
     "name": "cydynamic"
