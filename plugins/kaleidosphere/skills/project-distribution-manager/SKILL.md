@@ -85,8 +85,10 @@ ks spark check --id <spark-id>
 
 火花文件每条一个 Markdown 文件。`append-section` 只允许通过临时内容文件追加到文末：
 `--heading` 传章节标题，`--content-file` 只能传章节正文，不能以相同 Markdown 标题开头。
-CLI 检测到重复标题会拒绝写入，而不会静默删除或改写用户正文。它返回实际 `spark id`、路径和
-写入的章节标题；AI 不得直接编辑火花 Markdown。现阶段支持
+CLI 检测到重复标题会拒绝写入，而不会静默删除或改写用户正文。用户明确要求修复、删除、改写
+或整理既有火花时，先用 `inspect` 确定唯一 `spark id` 和规范路径，随后才可直接编辑该文件，
+并必须再次 `inspect` 回读；“记录、补充、追加”仍只使用 `append-section`。完整边界见
+[受管文件访问工作流](../ks/references/managed-file-access-workflow.md)。现阶段支持
 全局火花和可检索内容，不把火花移动到项目 `ks-context/`；项目关联、生命周期迁移和知识库
 转化仍是后续能力。
 

@@ -54,8 +54,9 @@ description: KaleidoSphere 的统一轻量入口与能力路由入口。适用�
 不属于当前项目的 `ks-context/`，不得以项目协作备忘录、聊天室或历史会话替代。
 
 先使用 `ks spark list` 或 `ks spark find` 定位。结果唯一且用户已经明确要求创建、追加或
-检查时，可由专项执行对应的受控 CLI 操作；结果不唯一时才询问用户。不得直接读写
-`sparks/` 内的 Markdown 文件。
+检查时，可由专项执行对应的受控 CLI 操作；结果不唯一时才询问用户。新章节必须使用 CLI
+追加。用户明确要求修复、删除、改写或整理既有火花时，专项可在 `inspect` 返回唯一规范路径后
+仅编辑该文件，并必须回读确认。完整边界见[受管文件访问工作流](references/managed-file-access-workflow.md)。
 
 ### 项目资产与开发现场
 
