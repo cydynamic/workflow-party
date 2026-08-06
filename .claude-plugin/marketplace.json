@@ -3,8 +3,8 @@
   "plugins": [
     {
       "name": "kaleidosphere",
-      "version": "0.1.9",
-      "description": "A human-in-the-loop AI work operating layer with capability routing and local project assets.",
+      "version": "0.2.0",
+      "description": "A human-in-the-loop AI work operating layer with local assets and explicit execution coordination.",
       "author": {
         "name": "cydynamic"
       },
@@ -17,6 +17,6 @@
   },
   "metadata": {
     "description": "Personal agent workflow marketplace maintained by cydynamic.",
-    "version": "0.1.9"
+    "version": "0.2.0"
   }
 }

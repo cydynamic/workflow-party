@@ -1,11 +1,11 @@
 ---
 name: ks
-description: KaleidoSphere 的统一轻量入口与能力路由入口。适用于用户通过 `@kaleidosphere`、未来 `/ks` 或自然语言表达 KS 相关目标。此 skill 只做首轮分类、必要时的最小项目身份定位和专项转交，不承担项目管理、版本管理、规则沉淀或交付流程。
+description: KaleidoSphere 的统一轻量入口与能力路由入口。适用于用户通过 `@kaleidosphere`、`/ks`、`$ks` 或“按 KS 协作”表达 KS 相关目标。此 skill 只做首轮分类、必要时的最小项目身份定位和专项转交，不承担项目管理、版本管理、规则沉淀或交付流程。
 ---
 
 # KS
 
-`ks` 是 KaleidoSphere 的统一轻量入口。用户只需表达目标；AI 判断是否需要当前已实现的 KS 能力，并在需要时转交对应专项。
+`ks` 是 KaleidoSphere 的统一轻量入口。`@kaleidosphere`、`/ks`、`$ks` 和“按 KS 协作”一律进入同一 Router：保留用户原始目标，完成一次轻量分类，再决定直接处理、提出协同建议或转交专项。入口形式不改变能力范围、项目身份判断或协同策略。
 
 ## 职责与非职责
 
@@ -24,6 +24,15 @@ description: KaleidoSphere 的统一轻量入口与能力路由入口。适用�
 - 以目录名、Git remote、代码内容或历史会话猜测项目身份。
 - 替代 AFK、KFC 或其他 provider 做阶段判断、门禁或 worker 编排。
 
+## 执行协调路由
+
+只有同时满足以下条件时，才建议并转交 `execution-coordination`：
+
+1. 用户已通过统一 Router 显式表达需要协同，例如明确要求并行、委派、跨会话协作、独立复验或按 KS 协作推进。
+2. 任务确有复杂协同必要性，例如存在相互独立的工作车道、需要独立验证、跨会话恢复，或单会话无法安全保留主线和证据。
+
+显式 KS 入口本身不等于授权拆分任务。简单问答、单文件小改、明确的单线操作或仅询问能力时，保持单会话处理，不读取长协作文档、不建立执行单元、不创建聊天室。协同建议只说明其必要性和下一步，由执行协调专项保持计划、授权、恢复与人工决策边界。
+
 ## 首轮分类与优先级
 
 按以下顺序分类，不向 CLI 传递自然语言：
@@ -34,8 +43,9 @@ description: KaleidoSphere 的统一轻量入口与能力路由入口。适用�
 4. 长期项目规则候选。
 5. 版本或分发版本请求。
 6. 项目资产与开发现场请求。
-7. 未实现能力或 provider 请求。
-8. 其余为普通问答。
+7. 显式协同且复杂的执行协调请求。
+8. 未实现能力或 provider 请求。
+9. 其余为普通问答。
 
 同一请求命中多个已实现专项、且用户没有明确先后顺序时，只询问希望先处理哪个目标；首期不自动串联多个专项，也不因此加载更多项目上下文。
 
@@ -110,11 +120,11 @@ Runtime bootstrap 仅属于已经命中的专项：当专项下一步确实需�
 
 ## 未实现能力和 provider
 
-chat-room、progress、知识治理、AFK/KFC 编排和未安装 provider，当前均不由本入口模拟执行。明确说明对应能力尚未提供或未安装；可以继续按用户的非 KS 原始问题讨论，但不得把请求默认改路由为 AFK、KFC 或虚构 provider。
+执行协调仅处理显式且复杂的协同请求；它不等于通用 chat-room、progress、知识治理或 AFK/KFC 编排能力。未安装 provider 或未实现的能力不得由本入口模拟执行。可以继续按用户的非 KS 原始问题讨论，但不得把请求默认改路由为 AFK、KFC 或虚构 provider。
 
 ## 显式专项调用
 
-用户显式调用 `project-distribution-manager`、`version-manager` 或 `project-rule-manager` 时，直接进入该专项，不需要回经 `ks`。专项仍独立保持自己的项目定位、runtime contract、只读检查、计划和用户确认边界。
+用户显式调用 `project-distribution-manager`、`version-manager`、`project-rule-manager` 或 `execution-coordination` 时，直接进入该专项，不需要回经 `ks`。专项仍独立保持自己的项目定位、runtime contract、只读检查、计划和用户确认边界。
 
 ## 面向用户的表达
 
