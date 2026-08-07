@@ -1,7 +1,7 @@
 {
   "name": "kaleidosphere",
-  "version": "0.2.0",
-  "description": "A human-in-the-loop AI work operating layer with local assets and explicit execution coordination.",
+  "version": "0.2.1",
+  "description": "A plugin-based AI work resource coordination layer for human-agent collaboration.",
   "author": {
     "name": "cydynamic"
   }

@@ -9,12 +9,14 @@ description: 管理本地项目工作空间、开发现场、项目身份、路�
 
 ## 体系定位
 
-KaleidoSphere 是面向 Human-in-the-loop 的 AI 工作操作层。它的目标是为多 Agent、
-多项目和本地能力提供可持续的工作现场、上下文恢复与能力路由。
+KaleidoSphere 是面向人机协同的、插件化的 AI 工作资源协调层。它借鉴操作系统在
+资源组织、接口抽象和协调方面的架构思想，但不是操作系统、通用运行时、桌面环境或
+自治工作流引擎。它的目标是为多 Agent、多项目和本地能力提供可持续的开发现场、
+项目资产管理、上下文关联和能力路由。
 
 `project-distribution-manager` 是 KS 当前第一项已实现能力，用于管理本地项目资产；
 它不是 KS 的完整定义，也不代表其他规划中能力已经可用。介绍 KS 时，先说明这一
-目标，再明确当前可用能力仅包括项目资产管理。
+目标，再明确当前可用能力和其他专项能力的实际状态。
 
 ## KS CLI 前置条件
 
@@ -78,9 +80,8 @@ ks spark append-section --id <spark-id> --heading <heading> --content-file <path
 ks spark check --id <spark-id>
 ```
 
-`ks spark` 的默认目录从已登记工作空间的共同父目录推导为 `sparks/`；例如工作空间位于
-`/Users/cayce/projects-ks/{work,tooling,...}` 时，默认目录为
-`/Users/cayce/projects-ks/sparks/`。工作空间不共享共同父目录时，必须先由用户确认，
+`ks spark` 的默认目录从已登记工作空间的共同父目录推导为 `sparks/`；具体根目录由
+用户配置，不写死在 Skill 文档中。工作空间不共享共同父目录时，必须先由用户确认，
 再使用 `ks spark configure` 设置目录。
 
 火花文件每条一个 Markdown 文件。`append-section` 只允许通过临时内容文件追加到文末：
