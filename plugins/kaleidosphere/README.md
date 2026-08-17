@@ -13,7 +13,7 @@ operations.
 ## Included Skills
 
 - `ks`: explicit KS entry and lightweight capability routing.
-- `project-distribution-manager`: projects, worksites, `ks-context`, and sparks.
+- `project-distribution-manager`: projects, planned external Git adoption, worksites, semantic project discovery, `ks-context`, and sparks.
 - `version-manager`: optional project version management.
 - `project-rule-manager`: user-confirmed long-term project rules.
 - `execution-coordination`: explicit complex collaboration and recoverable chat-room state.

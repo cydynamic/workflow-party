@@ -10,7 +10,7 @@
 ## 随附 Skills
 
 - `ks`：显式 KS 入口和轻量能力路由。
-- `project-distribution-manager`：项目、开发现场、`ks-context` 和火花。
+- `project-distribution-manager`：项目、外部 Git 接手计划、开发现场、项目语义定位、`ks-context` 和火花。
 - `version-manager`：可选项目版本管理。
 - `project-rule-manager`：经用户确认的长期项目规则。
 - `execution-coordination`：显式复杂协同与可恢复聊天室状态。

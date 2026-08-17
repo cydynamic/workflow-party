@@ -3,7 +3,7 @@
   "plugins": [
     {
       "name": "kaleidosphere",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "description": "A plugin-based AI work resource coordination layer for human-agent collaboration.",
       "author": {
         "name": "cydynamic"
@@ -17,6 +17,6 @@
   },
   "metadata": {
     "description": "Personal agent workflow marketplace maintained by cydynamic.",
-    "version": "0.3.0"
+    "version": "0.4.0"
   }
 }
