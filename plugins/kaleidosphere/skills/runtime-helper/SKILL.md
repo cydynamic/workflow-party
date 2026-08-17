@@ -20,16 +20,15 @@ description: 确保当前 KaleidoSphere plugin 随附的 ks CLI 与系统全局 
 
 ## 执行步骤
 
-1. 确认当前 plugin 的 `resources/` 中存在且只有一个 `kaleidosphere-<version>.tgz`；从文件名得到期望版本。
-2. 运行 `ks --version`。若命令不可用、无法执行，或输出版本与期望版本不同，继续下一步；相同则报告 runtime 已就绪。
-3. 仅安装当前 plugin 的 tarball：
+1. 只能执行当前激活 plugin 随附的检查器，不得由模型自行拼接版本比较或安装命令：
 
    ```bash
-   npm install --global <plugin-root>/resources/kaleidosphere-<version>.tgz
+   node <plugin-root>/skills/runtime-helper/scripts/ensure-runtime.js --json
    ```
 
-4. 再次运行 `ks --version`。只有输出与 tarball 版本完全一致时，才向原专项返回“runtime 已就绪”。
-5. tarball 缺失、npm 安装失败、复检失败或当前 shell 找不到 `ks` 时停止，并如实报告；Windows 先确认 npm global bin 位于 `PATH`。
+2. 检查器确认 `resources/` 中唯一的 `kaleidosphere-<version>.tgz`，运行 `ks --version`，仅在版本不一致或命令不可用时执行 `npm install --global <plugin-root>/resources/kaleidosphere-<version>.tgz`，再精确复检。
+3. 只有检查器返回 `ok: true` 且 `afterVersion` 等于 `expectedVersion` 时，才向原专项返回“runtime 已就绪”。
+4. tarball 缺失、npm 安装失败、复检失败或当前 shell 找不到 `ks` 时停止，并如实报告；Windows 先确认 npm global bin 位于 `PATH`。
 
 ## 边界
 
