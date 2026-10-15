@@ -1,6 +1,6 @@
 ---
 name: kfc
-description: 个人 KFC 工作流入口。用于按阶段定位开发、测试、复核、验收和交付材料；不连接公司网络通知、external issue tracker、external quality scanner 或公司安装流程。
+description: 个人 KFC 工作流入口。用于按阶段定位开发、测试、复核、验收和交付材料；仅使用本地状态和个人配置。
 ---
 
 # KFC 个人入口
@@ -22,9 +22,9 @@ node kfc/scripts/kfc.js dependencies --check-only
 
 ## 个人边界
 
-- 不执行入口网络通知，不发送网络网络通知，不要求使用人登记。
+- 不执行入口上报，不发送网络通知，不要求使用人登记。
 - 不安装或更新公司 skill 聚合包；缺少可选 skill 时报告位置和选择，不静默联网安装。
-- external issue tracker、external quality scanner 和公司质量门禁已从个人包固定步骤、worker catalog 与内置注册表移除。
+- 外部工单、外部质量扫描和公司质量门禁已从个人包固定步骤、worker catalog 与内置注册表移除。
 - 个人包级 worker 注销只能通过 `kfc-flow-router/scripts/package-workers.js` 的预览、哈希确认、应用流程完成；不要直接编辑这些注册表。
 
 ## 输出
