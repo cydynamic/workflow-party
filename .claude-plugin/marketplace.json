@@ -10,6 +10,16 @@
       },
       "source": "./plugins/kaleidosphere",
       "category": "developer-tools"
+    },
+    {
+      "name": "kfc-plugin",
+      "version": "0.1.0",
+      "description": "Personal KFC workflow coordinator with local state and worker registry.",
+      "author": {
+        "name": "cydynamic"
+      },
+      "source": "./plugins/kfc-plugin",
+      "category": "developer-tools"
     }
   ],
   "owner": {
@@ -17,6 +27,6 @@
   },
   "metadata": {
     "description": "Personal agent workflow marketplace maintained by cydynamic.",
-    "version": "0.4.1"
+    "version": "0.1.0"
   }
 }
