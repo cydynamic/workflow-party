@@ -20,6 +20,10 @@ Discover → Add index source，填写发布后的 `dsh/index.json` HTTPS 地址
 必要时安装随包 tarball，安装后再次检查。执行协调遵循原有显式协同和复杂性条件，
 并优先使用 DSH 本地子代理。启动和运行证据来自 DSH 原生工具。
 
+Installed 中的 `kaleidosphere-subagent` 组件提供 `ks_subagent`，用于将已授权的独立工作
+派给 DSH 本地子代理。关闭组件后仍可使用 KS 的技能和 CLI。协调时可以使用会话提供的
+原生子代理工具。Agent Teams 模式下，通过 `spawn_teammate` 派发并使用配套的 Team 工具。
+
 ## 构建与索引
 
 在 KS 源码仓执行以下命令，`<marketplace-root>` 为 Workflow Party Git 根目录。

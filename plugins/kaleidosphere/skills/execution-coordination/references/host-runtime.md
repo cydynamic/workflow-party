@@ -6,14 +6,15 @@
 ## DSH
 
 DSH 原生 bundle 向随包技能追加“DSH 宿主上下文”，并注册绑定本地 `spawn` provider 的
-`ks_subagent`。当前会话有此宿主上下文时，协调优先使用 `ks_subagent` 派发，使用
-`list_agents` 查询、`send_message` 续接和 `interrupt_agent` 中断，等待宿主发送的完成通知。
-宿主提供等待工具时可按其实际 schema 调用。DSH `0.2.2-rc.1` 的控制工具包含查询、
-消息和中断，完成结果通过宿主通知送达。
+`ks_subagent`。当前会话有此宿主上下文时，按可见工具选择成套的 DSH 原生派发和控制能力。
+
+- Agent Teams 会话使用 `spawn_teammate` 创建队友，使用 Team 的查询、消息、中断和等待工具。
+- 普通会话优先用 `ks_subagent`，该组件关闭时可使用宿主可见的 `subagent`。用同一套原生
+  `list_agents`、`send_message` 和 `interrupt_agent` 管理子代理，并读取宿主的完成通知。
 
 原生工具的受理回执只证明接收了任务。记录工具返回的子代理名称或会话 ID，再通过状态回读
 和首个职责范围内的真实产出确认启动。需要恢复时先查询原执行单元，沿用宿主身份续接。
-缺少 `ks_subagent` 或控制工具时明确记录能力缺口，执行已有失败处理规则。
+派发或配套控制能力不可用时记录缺口，执行已有失败处理规则。
 
 ## Codex 与其他宿主
 

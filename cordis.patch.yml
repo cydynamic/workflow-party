@@ -2,7 +2,4 @@
     - id: kaleidosphere-skills
       name: ./dsh/kaleidosphere/dsh/index.mjs
     - id: kaleidosphere-subagent
-      name: '@deepseek-ai/dsh-tool-subagent'
-      config:
-        provider: spawn
-        toolName: ks_subagent
+      name: ./dsh/kaleidosphere/dsh/subagent.mjs

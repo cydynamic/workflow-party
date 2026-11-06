@@ -40,6 +40,4 @@ description: 确保当前 KaleidoSphere plugin 随附的 ks CLI 与系统全局 
 ## DSH 宿主上下文
 
 本技能由 KaleidoSphere 的 DSH 原生 bundle 装载，当前宿主为 DeepSeek Harness（dsh）。
-满足执行协调的授权与复杂性条件时，优先使用绑定 DSH 本地 spawn provider 的
-`ks_subagent`，状态、消息、等待与中断使用 DSH 可见的原生控制工具。
-缺少工具时报告能力缺口，并遵循协调技能的失败处理规则。
+满足执行协调的授权与复杂性条件时，按协调技能的宿主运行时规则选择 DSH 原生工具。
