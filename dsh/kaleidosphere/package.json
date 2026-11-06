@@ -1,0 +1,28 @@
+{
+  "name": "dsh-kaleidosphere",
+  "version": "0.4.3",
+  "description": "KaleidoSphere skills and native DeepSeek Harness coordination.",
+  "type": "commonjs",
+  "files": [
+    "cordis.patch.yml",
+    "dsh/",
+    "skills/",
+    "resources/",
+    "assets/",
+    "README.md",
+    "README_CN.md"
+  ],
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": "0.2.2-rc.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill-filesystem": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tool-subagent": "0.2.2-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
