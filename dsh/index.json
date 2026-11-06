@@ -1,0 +1,30 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Workflow Party",
+    "zh": "Workflow Party"
+  },
+  "plugins": [
+    {
+      "name": "dsh-kaleidosphere",
+      "title": "KaleidoSphere",
+      "description": "KaleidoSphere skills and native DeepSeek Harness coordination.",
+      "author": "cydynamic",
+      "versions": [
+        {
+          "version": "0.4.3",
+          "publishTimestamp": 1793932900,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/cydynamic/workflow-party",
+            "commit": "624bd6e8e4228e4f6d1a579f6b95120741fd5c78",
+            "path": "dsh/kaleidosphere"
+          },
+          "engines": {
+            "dsh": "0.2.2-rc.1"
+          }
+        }
+      ]
+    }
+  ]
+}
