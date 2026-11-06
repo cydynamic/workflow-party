@@ -12,6 +12,19 @@
       "author": "cydynamic",
       "versions": [
         {
+          "version": "0.4.5",
+          "publishTimestamp": 1793935593,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/cydynamic/workflow-party",
+            "commit": "8e5bd08da94597b70183766ba41f41c3d77b3e5a",
+            "path": "dsh/kaleidosphere"
+          },
+          "engines": {
+            "dsh": "0.2.2-rc.1"
+          }
+        },
+        {
           "version": "0.4.4",
           "publishTimestamp": 1793934512,
           "source": {
