@@ -1,6 +1,6 @@
 {
   "name": "workflow-party",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "KaleidoSphere skills and native DeepSeek Harness coordination.",
   "type": "commonjs",
   "files": [
