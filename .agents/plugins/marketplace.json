@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "kaleidosphere",
+      "name": "kfc-plugin",
       "source": {
         "source": "local",
-        "path": "./plugins/kaleidosphere"
+        "path": "./plugins/kfc-plugin"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -17,10 +17,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "kfc-plugin",
+      "name": "kaleidosphere",
       "source": {
         "source": "local",
-        "path": "./plugins/kfc-plugin"
+        "path": "./plugins/kaleidosphere"
       },
       "policy": {
         "installation": "AVAILABLE",

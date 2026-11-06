@@ -1,6 +1,6 @@
 {
   "name": "kaleidosphere",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A plugin-based AI work resource coordination layer for human-agent collaboration.",
   "author": {
     "name": "cydynamic"
@@ -8,6 +8,9 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "KaleidoSphere",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo.png",
+    "composerIcon": "./assets/logo.png",
     "shortDescription": "A plugin-based AI work resource coordination layer.",
     "longDescription": "KaleidoSphere coordinates projects, worksites, context, capabilities, tools, providers, and explicit complex execution across Agents. This release provides the KS routing entry, runtime repair, local project assets, global spark management, optional version and project-rule management, plus controlled execution coordination and chat-room state for explicitly requested complex work.",
     "developerName": "cydynamic",
