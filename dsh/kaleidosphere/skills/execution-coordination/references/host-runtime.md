@@ -8,9 +8,10 @@
 DSH 原生 bundle 向随包技能追加“DSH 宿主上下文”，并注册绑定本地 `spawn` provider 的
 `ks_subagent`。当前会话有此宿主上下文时，按可见工具选择成套的 DSH 原生派发和控制能力。
 
-- Agent Teams 会话使用 `spawn_teammate` 创建队友，使用 Team 的查询、消息、中断和等待工具。
-- 普通会话优先用 `ks_subagent`，该组件关闭时可使用宿主可见的 `subagent`。用同一套原生
-  `list_agents`、`send_message` 和 `interrupt_agent` 管理子代理，并读取宿主的完成通知。
+- `0.2.2-rc.1` 的实验性 Agent Teams 会话在提供 `spawn_teammate` 时用它创建队友，配合该会话的 Team 工具。
+- 其他会话优先用 `ks_subagent`，该组件关闭时使用宿主可见的 `subagent`。DSH `0.2.2-rc.2` 的
+  Agent Teams 也使用这一套具名子代理工具。通过 `list_agents` 和 `send_message` 管理子代理，
+  `wait_agent` 和 `interrupt_agent` 按当前会话实际提供的工具使用，并读取宿主的完成通知。
 
 原生工具的受理回执只证明接收了任务。记录工具返回的子代理名称或会话 ID，再通过状态回读
 和首个职责范围内的真实产出确认启动。需要恢复时先查询原执行单元，沿用宿主身份续接。

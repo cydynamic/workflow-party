@@ -5,7 +5,7 @@ DSH 发布模式提供 Workflow Party 仓库根 bundle 和可独立安装的 Kal
 
 ## 使用
 
-运行环境为 Node.js 24.9 以上，已验证目标为 DSH `0.2.2-rc.1`。
+支持 DSH `0.2.2-rc.1` 和 `0.2.2-rc.2`。通过 Node.js 运行 DSH 时，需要 24.9 以上。
 
 在 DSH 插件安装界面导入发布后的 Workflow Party Git 仓库，或执行
 `dsh plugin --profile web add github:cydynamic/workflow-party`。
@@ -22,7 +22,8 @@ Discover → Add index source，填写发布后的 `dsh/index.json` HTTPS 地址
 
 Installed 中的 `kaleidosphere-subagent` 组件提供 `ks_subagent`，用于将已授权的独立工作
 派给 DSH 本地子代理。关闭组件后仍可使用 KS 的技能和 CLI。协调时可以使用会话提供的
-原生子代理工具。Agent Teams 模式下，通过 `spawn_teammate` 派发并使用配套的 Team 工具。
+原生子代理工具。DSH `0.2.2-rc.2` 的 Agent Teams 使用同一套具名子代理工具。
+`0.2.2-rc.1` 的实验性 Agent Teams 会话可使用 `spawn_teammate` 和配套的 Team 工具。
 
 ## 构建与索引
 
