@@ -12,6 +12,19 @@
       "author": "cydynamic",
       "versions": [
         {
+          "version": "0.4.7",
+          "publishTimestamp": 1794556031,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/cydynamic/workflow-party",
+            "commit": "7b6bfb03a92cf5f50517285821874536b3534921",
+            "path": "dsh/kaleidosphere"
+          },
+          "engines": {
+            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2"
+          }
+        },
+        {
           "version": "0.4.6",
           "publishTimestamp": 1794532986,
           "source": {
@@ -65,6 +78,27 @@
         }
       ],
       "icon": "kaleidosphere/assets/logo.png"
+    },
+    {
+      "name": "dsh-kfc-plugin",
+      "title": "KFC Personal Plugin",
+      "description": "Personal KFC workflow coordinator with local state and worker registry.",
+      "author": "cydynamic",
+      "versions": [
+        {
+          "version": "0.1.2",
+          "publishTimestamp": 1794556031,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/cydynamic/workflow-party",
+            "commit": "7b6bfb03a92cf5f50517285821874536b3534921",
+            "path": "dsh/kfc-plugin"
+          },
+          "engines": {
+            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2"
+          }
+        }
+      ]
     }
   ]
 }
