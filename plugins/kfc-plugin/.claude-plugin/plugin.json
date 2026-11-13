@@ -1,6 +1,6 @@
 {
   "name": "kfc-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Personal KFC workflow coordinator with local state and worker registry.",
   "author": {
     "name": "cydynamic"

@@ -1,6 +1,6 @@
 {
   "name": "dsh-kaleidosphere",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "KaleidoSphere skills and native DeepSeek Harness coordination.",
   "icon": "assets/logo-dsh.png",
   "type": "commonjs",

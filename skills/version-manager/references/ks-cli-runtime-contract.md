@@ -5,22 +5,16 @@
 
 ## 执行前检查
 
-1. 运行 `ks --version`。
-2. 将返回版本与当前 plugin 随附的 KaleidoSphere tarball 版本比较。
-3. 命令不存在、无法执行或版本不兼容时，定位当前 plugin 的：
-
-   ```text
-   <plugin-root>/resources/kaleidosphere-<version>.tgz
-   ```
-
-4. 仅使用该 tarball 安装：
+1. 调用当前 plugin 随附的 runtime 检查器：
 
    ```bash
-   npm install --global <plugin-root>/resources/kaleidosphere-<version>.tgz
-   ks --version
+   node <plugin-root>/skills/runtime-helper/scripts/ensure-runtime.js --json
    ```
 
-5. 必须复检实际输出版本。复检失败、tarball 缺失或当前 shell 找不到 npm global bin 时，
+2. 检查器负责运行 `ks --version`，将输出与当前 plugin 的
+   `kaleidosphere-<version>.tgz` 比较，并且仅在不一致时执行
+   `npm install --global <plugin-root>/resources/kaleidosphere-<version>.tgz` 与复检。
+3. 必须确认检查器的 `afterVersion` 等于 `expectedVersion`。复检失败、tarball 缺失或当前 shell 找不到 npm global bin 时，
    停止本次操作并如实报告；Windows 环境先检查 npm global bin 是否在 `PATH` 中。
 
 ## 禁止行为

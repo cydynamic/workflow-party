@@ -10,14 +10,14 @@ Codex plugin 内的 tarball 路径为：
 <plugin-root>/resources/kaleidosphere-<version>.tgz
 ```
 
-当 `ks --version` 不可用，或其版本与当前 plugin tarball 不一致时，先交由
-`runtime-helper` 处理；在确认 tarball 路径后执行：
+执行任何 `ks` 命令前，先交由 `runtime-helper` 执行当前 plugin 随附的检查器：
 
 ```bash
-npm install --global <plugin-root>/resources/kaleidosphere-<version>.tgz
-ks --version
+node <plugin-root>/skills/runtime-helper/scripts/ensure-runtime.js --json
 ```
 
-Windows 也使用相同的 npm 安装语义；如果当前 shell 无法找到 `ks`，先确认 npm
-global bin 目录已加入当前 shell 的 `PATH`，再重试。不能通过手工修改 KS 注册表
-替代安装。
+检查器会运行 `ks --version`；仅当版本与当前 plugin 的
+`kaleidosphere-<version>.tgz` 不一致时，才执行
+`npm install --global <plugin-root>/resources/kaleidosphere-<version>.tgz` 并复检。Windows
+下当前 shell 找不到 `ks` 时，先确认 npm global bin 已在 `PATH`。不能通过手工修改 KS
+注册表替代安装。

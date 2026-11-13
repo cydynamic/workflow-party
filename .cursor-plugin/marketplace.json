@@ -1,0 +1,24 @@
+{
+  "name": "workflow-party",
+  "owner": {
+    "name": "cydynamic"
+  },
+  "metadata": {
+    "description": "Personal agent workflow marketplace maintained by cydynamic.",
+    "version": "0.4.7"
+  },
+  "plugins": [
+    {
+      "name": "kfc-plugin",
+      "version": "0.1.2",
+      "description": "Personal KFC workflow coordinator with local state and worker registry.",
+      "source": "plugins/kfc-plugin"
+    },
+    {
+      "name": "kaleidosphere",
+      "version": "0.4.7",
+      "description": "A plugin-based AI work resource coordination layer for human-agent collaboration.",
+      "source": "plugins/kaleidosphere"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "dsh-kfc-plugin",
+  "version": "0.1.2",
+  "description": "Personal KFC workflow coordinator with local state and worker registry.",
+  "author": {
+    "name": "cydynamic"
+  },
+  "displayName": "KFC Personal Plugin",
+  "type": "commonjs",
+  "files": [
+    "cordis.patch.yml",
+    "index.mjs",
+    "skills/",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": "0.2.2-rc.1 || 0.2.2-rc.2"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill-filesystem": "0.2.2-rc.1 || 0.2.2-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

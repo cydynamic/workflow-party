@@ -1,0 +1,3 @@
+- insert:
+    - id: kfc-personal-skills
+      name: ./index.mjs

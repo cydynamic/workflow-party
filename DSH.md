@@ -1,7 +1,9 @@
 # Workflow Party 与 DeepSeek Harness
 
-DSH 发布模式提供 Workflow Party 仓库根 bundle 和可独立安装的 KaleidoSphere bundle。
-当前 DSH 目录包含万花境的六个技能、原生协调派发工具和同版本 `ks` CLI tarball。
+Workflow Party 的 DSH 索引提供两个可独立安装的插件。
+
+- KaleidoSphere 提供万花境的六个技能、原生协调派发工具和同版本 `ks` CLI tarball。
+- KFC Personal Plugin 通过 `/kfc-personal` 提供个人开发工作流，状态保存在项目的 `.kfc/` 和本机个人配置中。
 
 ## 使用
 
@@ -14,7 +16,7 @@ DSH 发布模式提供 Workflow Party 仓库根 bundle 和可独立安装的 Kal
 
 也可在 Plugins 的 Experimental plugins 中开启 Custom plugin indexes，进入
 Discover → Add index source，填写发布后的 `dsh/index.json` HTTPS 地址，
-选择 KaleidoSphere 并确认安装。索引绑定包含产物的完整 Git 提交。
+选择 KaleidoSphere 或 KFC Personal Plugin 并确认安装。索引绑定包含产物的完整 Git 提交。
 
 通过 `/ks` 使用万花境。首次执行依赖 CLI 的任务时，随包检查器检查 `ks` 版本，
 必要时安装随包 tarball，安装后再次检查。执行协调遵循原有显式协同和复杂性条件，
@@ -39,6 +41,9 @@ npm run release:marketplace -- --marketplace <marketplace-root> --dsh
 ```sh
 npm run release:marketplace -- --marketplace <marketplace-root> --dsh-index <full-commit-sha>
 ```
+
+KFC 由个人版源码仓的 `scripts/release-marketplace.js <marketplace-root>` 生成。
+提交产物后，以上索引命令追加 `--dsh-plugin kfc-plugin` 即可更新对应条目。
 
 索引生成只读取已提交的产物，保留其他插件条目，并拒绝无效提交或同版本更换来源。
 再提交索引并推送这两个提交后，远程导入地址才包含新产物。

@@ -9,6 +9,9 @@ description: 个人 KFC 工作流入口。用于按阶段定位开发、测试�
 
 ## 入口命令
 
+从当前已加载的 `kfc/SKILL.md` 定位同目录的 `scripts/kfc.js`，执行时使用脚本的绝对路径。
+下列路径从发布包的 `skills/` 目录计算。将 `--root` 指向当前项目的工作流目录。
+
 ```bash
 node kfc/scripts/kfc.js current --root <workflow-root>
 node kfc/scripts/kfc.js route --root <workflow-root> --material "<材料>"
